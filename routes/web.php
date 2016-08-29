@@ -12,16 +12,20 @@
 */
 
 
-Route::get('about', 'PagesController@about');
 Route::get('/', 'PagesController@home');
+Route::get('about', 'PagesController@about');
+//modifying route lookup to be case insensitive.
+//redirect to lowercase URI using middleware.
+Route::get('{cards}', 'CardsController@index')->where('cards', '(?i:cards)')->middleware('lowercase');
 
+//use {variable_name} to wildcard for routing.
+Route::get('cards/{card}', 'CardsController@show');
+//show version of laravel currently being used.
 Route::get('laravel-version', function() {
   $laravel = app();
   return "Your Laravel version is ".$laravel::VERSION;
 });
 
-Route::get('login', function() {
-  return "Login";
-});
+Auth::routes();
 
-Route::get('cards', 'CardsController@index');
+Route::get('/home', 'HomeController@index');

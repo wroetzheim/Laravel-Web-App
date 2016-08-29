@@ -7,9 +7,38 @@
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-
+//@import "resources/assets/bower/materialize/sass/materialize";
+@import url("//fonts.googleapis.com/icon?family=Material+Icons");
+@import "resources/assets/bower/material-design-lite/material.min";
 
 // Custom Styles
-body {
-  color: $primary;
+nav {
+    right: 0;
+    position: fixed;
 }
+
+.footer-contact {
+    display: block;
+}
+
+.footer-content {
+    width: 100%;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+// html {
+//   position: relative;
+//   min-height: 100%;
+// }
+// body {
+//   /* Margin bottom by footer height */
+//   margin-bottom: 20px;
+// }
+// .footer {
+//   position: absolute;
+//   bottom: 0;
+//   width: 100%;
+//   /* Set the fixed height of the footer here */
+//   height: 20px;
+// }

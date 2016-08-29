@@ -1,11 +1,14 @@
-
+//window.$ = window.jQuery = require('jquery');
 /**
  * First we will load all of this project's JavaScript dependencies which
  * include Vue and Vue Resource. This gives a great starting point for
  * building robust, powerful web applications using Vue and Laravel.
  */
-
-require('./bootstrap');
+require('../bower/jquery/dist/jquery');
+//require('../bower/materialize/dist/js/materialize')
+require('../bower/material-design-lite/material.min.js');
+//require('./bootstrap');
+require('./custom');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -13,8 +16,8 @@ require('./bootstrap');
  * the application, or feel free to tweak this setup for your needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
-
-const app = new Vue({
-    el: 'body'
-});
+// Vue.component('example', require('./components/Example.vue'));
+//
+// const app = new Vue({
+//     el: 'body'
+// });
