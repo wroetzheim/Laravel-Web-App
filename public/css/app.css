@@ -5775,7 +5775,11 @@ nav {
 
 .content-grid {
   max-width: 960px;
-  margin-top: 64px; }
+  margin-top: 64px;
+  padding-bottom: 2em; }
+
+.mdl-layout__container {
+  position: relative; }
 
 .fixed,
 .mdl-layout__drawer-button,

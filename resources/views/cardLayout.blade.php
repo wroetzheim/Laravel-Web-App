@@ -12,7 +12,7 @@
 
 </head>
 <body>
-    <div class="mdl-layout mdl-js-layout">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header fixed">
           <div class="mdl-layout__header-row">
             <!-- Title -->
@@ -21,20 +21,14 @@
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation. We hide it in small screens. -->
             <nav class="mdl-navigation mdl-layout--large-screen-only">
-              <a class="mdl-navigation__link" href="">Link</a>
-              <a class="mdl-navigation__link" href="">Link</a>
-              <a class="mdl-navigation__link" href="">Link</a>
-              <a class="mdl-navigation__link" href="">Link</a>
+                @include('navLinks')
             </nav>
           </div>
         </header>
         <div class="mdl-layout__drawer fixed">
           <span class="mdl-layout-title">Title</span>
           <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" href="">Link</a>
-            <a class="mdl-navigation__link" href="">Link</a>
-            <a class="mdl-navigation__link" href="">Link</a>
-            <a class="mdl-navigation__link" href="">Link</a>
+              @include('navLinks')
           </nav>
         </div>
         <main>
