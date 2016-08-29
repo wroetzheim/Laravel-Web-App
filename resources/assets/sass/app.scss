@@ -11,8 +11,8 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 //@import "resources/assets/bower/materialize/sass/materialize";
 @import url("//fonts.googleapis.com/icon?family=Material+Icons");
-@import "resources/assets/bower/material-design-lite/material.min";
-
+//@import "resources/assets/bower/material-design-lite/material.min";
+@import url("//code.getmdl.io/1.2.0/material.teal-amber.min.css");
 // Custom Styles
 nav {
     right: 0;

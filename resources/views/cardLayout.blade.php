@@ -12,7 +12,7 @@
 
 </head>
 <body>
-    <div class="mdl-layout mdl-js-layout mdl-layout">
+    <div class="mdl-layout mdl-js-layout">
         <header class="mdl-layout__header fixed">
           <div class="mdl-layout__header-row">
             <!-- Title -->
@@ -49,7 +49,7 @@
             </div>
             <div class="mdl-mega-footer__middle-section">
                 <div class="mdl-mega-footer__left-section">
-                    <h4>Links</h4>
+                    <h4 class="mdl-typography--display-3">Links</h4>
                     <div class="mdl-logo footer-link-title">Section Title</div>
                     <ul class="mdl-mega-footer__link-list">
                         <li><a href="#">Help</a></li>
@@ -65,7 +65,7 @@
                 </div>
 
                 <div class="mdl-mega-footer__right-section">
-                    <h4>Contact</h4>
+                    <h4 class="mdl-typography--display-3">Contact</h4>
                     <form action="#">
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label footer-contact">
                             <input class="mdl-textfield__input" type="email" id="email" />
