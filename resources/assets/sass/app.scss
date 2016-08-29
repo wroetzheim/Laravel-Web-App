@@ -1,6 +1,8 @@
 
 // Fonts
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import url(http://fonts.googleapis.com/css?family=Roboto:300,400,500,700);
+
 
 // Variables
 @import "variables";
@@ -17,12 +19,31 @@ nav {
     position: fixed;
 }
 
+.content-grid {
+    max-width: 960px;
+    margin-top: 64px;
+}
+
+// .card-centered {
+//     margin:auto;
+// }
+
+.fixed,
+.mdl-layout__drawer-button,
+.mdl-layout__obfuscator {
+    position: fixed;
+}
+
 .footer-contact {
-    display: block;
+    display:block;
 }
 
 .footer-content {
     width: 100%;
+}
+
+.footer-link-title {
+    float: none;
 }
 
 /* Sticky footer styles

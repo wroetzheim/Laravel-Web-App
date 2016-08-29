@@ -12,11 +12,11 @@
 
 </head>
 <body>
-    <div id="container" class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <header class="mdl-layout__header mdl-layout--fixed-header">
+    <div class="mdl-layout mdl-js-layout mdl-layout">
+        <header class="mdl-layout__header fixed">
           <div class="mdl-layout__header-row">
             <!-- Title -->
-            <span class="mdl-layout-title">Title</span>
+            <span class="mdl-layout-title">Will App</span>
             <!-- Add spacer, to align navigation to the right -->
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation. We hide it in small screens. -->
@@ -28,7 +28,7 @@
             </nav>
           </div>
         </header>
-        <div class="mdl-layout__drawer">
+        <div class="mdl-layout__drawer fixed">
           <span class="mdl-layout-title">Title</span>
           <nav class="mdl-navigation">
             <a class="mdl-navigation__link" href="">Link</a>
@@ -37,30 +37,34 @@
             <a class="mdl-navigation__link" href="">Link</a>
           </nav>
         </div>
-          <main>
-              
-            @yield('content')
-            <footer class="mdl-mini-footer footer">
-                <div class="footer-content">
-                    <p>Here is where the footer content will go.</p>
-                    @yield('footer')
-                </div>
-                <div class="mdl-mini-footer__left-section">
+        <main>
+            <div class="mdl-grid content-grid">
+                @yield('content')
+            </div>
+        </main>
+        <footer class="mdl-mega-footer footer">
+            <div class="mdl-mega-footer__top-section">
+                <p>Here is where the footer top content will go.</p>
+                @yield('footer')
+            </div>
+            <div class="mdl-mega-footer__middle-section">
+                <div class="mdl-mega-footer__left-section">
                     <h4>Links</h4>
-                    <div class="mdl-logo">Title</div>
-                    <ul class="mdl-mini-footer__link-list">
+                    <div class="mdl-logo footer-link-title">Section Title</div>
+                    <ul class="mdl-mega-footer__link-list">
                         <li><a href="#">Help</a></li>
                         <li><a href="#">Code Charity</a></li>
                         <li><a href="#">GitHub</a></li>
                     </ul>
-                    <div class="mdl-logo">Second Section</div>
-                    <ul class="mdl-mini-footer__link-list">
+                    <div class="mdl-logo footer-link-title">Second Section</div>
+                    <ul class="mdl-mega-footer__link-list">
                         <li><a href="#">Alpha</a></li>
                         <li><a href="#">Beta</a></li>
                         <li><a href="#">Capa</a></li>
                     </ul>
                 </div>
-                <div class="mdl-mini-footer__right-section">
+
+                <div class="mdl-mega-footer__right-section">
                     <h4>Contact</h4>
                     <form action="#">
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label footer-contact">
@@ -75,8 +79,18 @@
                         <submit class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Submit</submit>
                     </form>
                 </div>
-            </footer>
-        </main>
+            </div>
+            <div class="mdl-mega-footer__bottom-section">
+                <div class="mdl-logo">
+                  Mega-Footer Bottom Section Heading
+                </div>
+                <ul class="mdl-mega-footer__link-list">
+                    <li><a href="">Link A</a></li>
+                    <li><a href="">Link B</a></li>
+                </ul>
+            </div>
+        </footer>
+
     </div>
 
 
