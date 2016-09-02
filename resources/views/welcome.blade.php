@@ -73,6 +73,8 @@
             <div class="links">
                 <a href="//codecharity.org" target="_blank" title="Code Charity">Code Charity</a>
                 <a href="//github.com/wroetzheim" target="_blank" title="GitHub">Git Hub</a>
+                @include('layouts.nav.navLinks')
+
             </div>
         </div>
     </div>

@@ -21,17 +21,18 @@
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation. We hide it in small screens. -->
             <nav class="mdl-navigation mdl-layout--large-screen-only">
-                @include('navLinks')
+                @include('layouts.nav.navLinks')
             </nav>
           </div>
         </header>
         <div class="mdl-layout__drawer fixed">
-          <span class="mdl-layout-title">Title</span>
+          <span class="mdl-layout-title">Will App</span>
           <nav class="mdl-navigation">
-              @include('navLinks')
+              @include('layouts.nav.navLinks')
           </nav>
         </div>
-        <main>
+        <div class="ribbon"></div>
+        <main class="mdl-layout__content">
             <div class="mdl-grid content-grid">
                 @yield('content')
             </div>

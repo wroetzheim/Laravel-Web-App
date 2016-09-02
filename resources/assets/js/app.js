@@ -7,7 +7,7 @@
 require('../bower/jquery/dist/jquery');
 //require('../bower/materialize/dist/js/materialize')
 require('../bower/material-design-lite/material.min.js');
-//require('./bootstrap');
+require('./bootstrap');
 require('./custom');
 
 /**

@@ -72,6 +72,7 @@
                             </ul>
                         </li>
                     @endif
+                    @include('layouts.nav.navLinks')
                 </ul>
             </div>
         </div>

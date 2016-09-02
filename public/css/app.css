@@ -5775,7 +5775,6 @@ nav {
 
 .content-grid {
   max-width: 960px;
-  margin-top: 64px;
   padding-bottom: 2em; }
 
 .mdl-layout__container {
@@ -5794,6 +5793,25 @@ nav {
 
 .footer-link-title {
   float: none; }
+
+.ribbon {
+  margin-top: 64px;
+  width: 100%;
+  height: 20vh;
+  background-color: white;
+  flex-shrink: 0; }
+
+main {
+  margin-top: -15vh; }
+
+.relative {
+  position: relative; }
+
+.block {
+  display: block; }
+
+.edit-form {
+  font-size: 400%; }
 
 /* Sticky footer styles
 -------------------------------------------------- */
