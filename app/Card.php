@@ -16,12 +16,15 @@ class Card extends Model
     {
         return $this->hasMany(Note::class);
     }
-
-    //create a function to add a note to a Card
-    //@param: Note $note, User $user (Note object and User object)
+    /**
+     * Add a note to a Card
+     * @param Note $note, User $user
+     */
     public function addNote(Note $note, User $user)
     {
+        //set the user id for the note.
         $note->user_id = $user->id;
+        //save the note.
         return $this->notes()->save($note);
     }
 }
