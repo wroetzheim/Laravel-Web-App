@@ -52,7 +52,6 @@
                     @endforeach
                 </ul>
             @endif
-            {{var_dump($errors)}}
         </div>
     </div>
 @stop

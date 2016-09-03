@@ -5794,12 +5794,35 @@ nav {
 .footer-link-title {
   float: none; }
 
+.mdl-layout__header-row {
+  height: 64px; }
+
+.ribbon-container {
+  margin-top: 64px; }
+
 .ribbon {
-  margin-top: 64px;
   width: 100%;
   height: 20vh;
   background-color: white;
   flex-shrink: 0; }
+
+.alert {
+  color: white;
+  z-index: 2;
+  margin: auto;
+  position: absolute;
+  width: 100%;
+  border-radius: 0; }
+
+.alert--info {
+  background-color: yellow;
+  color: black; }
+
+.alert--error {
+  background-color: red; }
+
+.alert--success {
+  background-color: green; }
 
 main {
   margin-top: -15vh; }

@@ -31,7 +31,15 @@
               @include('layouts.nav.navLinks')
           </nav>
         </div>
-        <div class="ribbon"></div>
+        <div class="ribbon-container">
+            @if (Session::has('flash_message'))
+                <div class="alert alert--{{Session::get('flash_message_level')}}">
+                    {{ Session::get('flash_message') }}
+                </div>
+            @endif
+            <div class="ribbon">
+            </div>
+        </div>
         <main class="mdl-layout__content">
             <div class="mdl-grid content-grid">
                 @yield('content')
