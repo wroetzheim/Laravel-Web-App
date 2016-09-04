@@ -5808,18 +5808,21 @@ nav {
 
 .alert {
   color: white;
-  z-index: 2;
-  margin: auto;
-  position: absolute;
   width: 100%;
   border-radius: 0; }
+
+.alert--flash {
+  z-index: 2;
+  margin: auto;
+  position: absolute; }
 
 .alert--info {
   background-color: yellow;
   color: black; }
 
 .alert--error {
-  background-color: red; }
+  background-color: red;
+  color: white; }
 
 .alert--success {
   background-color: green; }

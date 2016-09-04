@@ -28,7 +28,7 @@ class CardsController extends Controller
 
     public function store(Request $request) {
         //title field is required and must be min 5 characters.
-        $rules = ['title' => 'required|min:5'];
+        $rules = ['title' => 'required|min:5', 'body' =>'required'];
         $this->validate($request, $rules);
 
         //save a new card based on the request parameters.

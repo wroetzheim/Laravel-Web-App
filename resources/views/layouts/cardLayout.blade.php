@@ -32,8 +32,9 @@
           </nav>
         </div>
         <div class="ribbon-container">
+
             @if (Session::has('flash_message'))
-                <div class="alert alert--{{Session::get('flash_message_level')}}">
+                <div class="alert alert--flash alert--{{Session::get('flash_message_level')}}">
                     {{ Session::get('flash_message') }}
                 </div>
             @endif
