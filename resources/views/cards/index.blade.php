@@ -41,6 +41,32 @@
             <p>Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus.</p>
             <p>Etiam porta sem malesuada magna mollis euismod. Nulla vitae elit libero, a pharetra augue. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
         </div>
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--12-col">
+                <h3>Add New Card</h3>
+            </div>
+            <div class="mdl-cell">
+                <form class="" action="/cards/add" method="POST">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label block">
+                        <input class="mdl-textfield__input" name="title" type="text" id="title" required value="{{old('title')}}">
+                        <label class="mdl-textfield__label" for="title">Card Title</label>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label block">
+                        <textarea id="body" name="body" class="mdl-textfield__input">{{old('body')}}</textarea>
+                        <label class="mdl-textfield__label" for="body">Add Card</label>
+                    </div>
+                    <button class="mdl-button mdl-js-button mdl-button--raised block" type="submit">Add Card</button>
+                    {{ csrf_field() }}
+                </form>
+                @if (count($errors))
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li>{{$error}}</li>
+                        @endforeach
+                    </ul>
+                @endif
+            </div>
+        </div>
     </div>
 
 

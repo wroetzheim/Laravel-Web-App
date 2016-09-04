@@ -36,6 +36,9 @@ Route::get('{cards}', 'CardsController@index')->where('cards', '(?i:cards)')->mi
 //use {variable_name} to wildcard for routing.
 Route::get('cards/{card}', 'CardsController@show');
 
+//add new card
+Route::post('cards/add', 'CardsController@store');
+
 /**
  * Note Routes
  */
