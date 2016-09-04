@@ -27,6 +27,11 @@ class NotesController extends Controller
         //die, dump $user
         //dd($user);
 
+        if (!$user) {
+            flash('You must be logged in to add a note.', 'error');
+            return back();
+        }
+
         //pass the user and the note to the addNote method of the Card model.
         $card->addNote($note, $user);
 

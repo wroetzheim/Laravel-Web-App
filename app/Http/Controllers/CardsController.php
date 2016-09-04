@@ -32,8 +32,11 @@ class CardsController extends Controller
         $this->validate($request, $rules);
 
         //save a new card based on the request parameters.
-        $card = new Card(['body' => $request->body, 'title' => $request->title]);
-        $card->save();
+        //$card = new Card(['body' => $request->body, 'title' => $request->title]);
+        //$card->save();
+        $cardParameters = ['body' => $request->body, 'title' => $request->title];
+        $card = Card::create($cardParameters);
+        flash('Card Created', 'success');
         return back();
     }
 }

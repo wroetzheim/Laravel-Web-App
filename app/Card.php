@@ -22,7 +22,7 @@ class Card extends Model
     /**
      * Add a note to a Card
      * @param Note $note, User $user
-     * @return save note
+     *
      */
     public function addNote(Note $note, User $user)
     {
