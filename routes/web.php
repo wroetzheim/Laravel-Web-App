@@ -12,9 +12,10 @@
 */
 
 //show version of laravel currently being used.
-Route::get('laravel-version', function() {
+Route::get('version', function() {
     $laravel = app();
-    return "Your Laravel version is ".$laravel::VERSION;
+    $response = "Your Laravel version is ".$laravel::VERSION;
+    return $response;
 });
 
 /**
