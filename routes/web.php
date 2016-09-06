@@ -1,5 +1,13 @@
 <?php
 
+/**
+|
+| Dump SQL query
+*/
+//DB::listen(function($query) {
+//	var_dump($query->sql, $query->bindings);
+//});
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
