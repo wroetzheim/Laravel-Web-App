@@ -19,18 +19,15 @@ class NotesController extends Controller
     public function store(Request $request, Card $card)
     {
 
-        //body field is required and must be min 10 characters.
-        $rules = ['body' => 'required|min:10'];
-        $this->validate($request, $rules);
-        $note = new Note(['body' => $request->body]);
-        $user = $request->user();
-        //die, dump $user
-        //dd($user);
-
-        if (!$user) {
-            flash('You must be logged in to add a note.', 'error');
-            return back();
-        }
+		$user = $request->user();
+		if (!$user) {
+			flash('You must be logged in to add a note.', 'error');
+			return back();
+		}
+		//body field is required and must be min 10 characters.
+		$rules = ['body' => 'required|min:10'];
+		$this->validate($request, $rules);
+		$note = new Note(['body' => $request->body]);
 
         //pass the user and the note to the addNote method of the Card model.
         $card->addNote($note, $user);

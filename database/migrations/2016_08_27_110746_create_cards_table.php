@@ -15,9 +15,12 @@ class CreateCardsTable extends Migration
     {
         Schema::create('cards', function (Blueprint $table) {
             $table->increments('id');
+			$table->integer('user_id')->unsigned()->index();
             $table->string('title');
-            $table->text('body');
+			$table->string('description');
+            $table->text('body')->nullable();
             $table->string('slug')->unique()->nullable();
+			$table->string('file');
             $table->timestamps();
         });
     }

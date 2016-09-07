@@ -5,7 +5,8 @@
 | Dump SQL query
 */
 //DB::listen(function($query) {
-//	var_dump($query->sql, $query->bindings);
+//	var_dump($query->sql);
+//	//var_dump($query->bindings);
 //});
 
 /*
@@ -26,15 +27,25 @@ Route::get('version', function() {
     return $response;
 });
 
+
+/**
+|
+| Page Controllers
+*/
+
+//home page route
+//Route::get('/', 'PagesController@home');
+Route::get('/', 'CardsController@index');
+
+//about page route
+Route::get('about', 'PagesController@about');
+
+
+
 /**
  * Card Routes
  */
 
-//home page route
-Route::get('/', 'PagesController@home');
-
-//about page route
-Route::get('about', 'PagesController@about');
 
 //modifying route lookup to be case insensitive.
 //redirect to lowercase URI using middleware.
@@ -46,6 +57,8 @@ Route::get('cards/{card}', 'CardsController@show');
 
 //add new card
 Route::post('cards/add', 'CardsController@store');
+
+Route::patch('cards/{card}', 'CardsController@update');
 
 /**
  * Note Routes
@@ -67,3 +80,9 @@ Route::patch('notes/{note}', 'NotesController@update');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/logout', function() {
+	Auth::logout();
+	flash('You are now logged out.', 'success');
+	return redirect('/');
+});

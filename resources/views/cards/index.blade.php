@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="mdl-cell mdl-cell--12-col">
-        <h1 class="mdl-typography--display-3 page-title">Cards</h1>
+        <h1 class="mdl-typography--display-3 page-title">Recipes</h1>
     </div>
     @foreach ($cards as $card)
             <div class="mdl-card mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-shadow--2dp">
@@ -16,8 +16,12 @@
                         {{$card->title}}
                     </h3>
                 </div>
+                <div>
+                    Created by: {{$card->user->name}}
+                    <img src="{{($card->file)}}"/>
+                </div>
                 <div class="mdl-card__supporting-text">
-                    <p>{{$card->body}}</p>
+                    <p>{{$card->description}}</p>
                 </div>
                 <div class="mdl-card__actions">
                     <a href="http://en.wikipedia.org/wiki/Sky_Tower_%28Auckland%29">Wikipedia Entry</a>
@@ -45,7 +49,7 @@
     <div class="mdl-cell mdl-cell--12-col mdl-color--white mdl-shadow--2dp content mdl-color-text--grey-800">
         <div class="mdl-grid">
             <div class="mdl-cell mdl-cell--12-col">
-                <h3>Add New Card</h3>
+                <h3>Add New Recipe</h3>
             </div>
             @if (count($errors))
                 <div class="mdl-cell mdl-cell--12-col alert--error alert">
@@ -55,16 +59,19 @@
                 </div>
             @endif
             <div class="mdl-cell">
-                <form class="" action="/cards/add" method="POST">
+                <form class="" action="/cards/add" method="POST" enctype="multipart/form-data">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label block">
                         <input class="mdl-textfield__input" name="title" type="text" id="title" required value="{{old('title')}}">
-                        <label class="mdl-textfield__label" for="title">Card Title</label>
+                        <label class="mdl-textfield__label" for="title">Recipe Title</label>
                     </div>
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label block">
-                        <textarea id="body" name="body" class="mdl-textfield__input" required>{{old('body')}}</textarea>
-                        <label class="mdl-textfield__label" for="body">Card Body</label>
+                        <textarea id="body" name="description" class="mdl-textfield__input" required>{{old('description')}}</textarea>
+                        <label class="mdl-textfield__label" for="description">Recipe Description</label>
                     </div>
-                    <button class="mdl-button mdl-js-button mdl-button--raised block" type="submit">Add Card</button>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label block">
+                        <input type="file" id="file" name="file" class="mdl-textfield__input" required>{{old('file')}}</input>
+                    </div>
+                    <button class="mdl-button mdl-js-button mdl-button--raised block" type="submit">Add Recipe</button>
                     {{ csrf_field() }}
                 </form>
             </div>

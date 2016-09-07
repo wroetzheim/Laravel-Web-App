@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Card extends Model
 {
 
-    protected $fillable = ['title','body'];
+    protected $fillable = ['title', 'body', 'description', 'file'];
 
     //create a slug from the title using Laravel's str_slug function
     public function createSlug() {
@@ -18,6 +18,12 @@ class Card extends Model
     {
         return $this->hasMany(Note::class);
     }
+
+	public function user()
+	{
+		//Card belongs to User.
+		return $this->belongsTo(User::class);
+	}
 
     /**
      * Add a note to a Card

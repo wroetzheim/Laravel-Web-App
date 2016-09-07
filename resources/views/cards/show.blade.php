@@ -17,7 +17,7 @@
             <div class="mdl-cell mdl-cell--12-col">
                 <p>{{$card->body}}</p>
                 @if (count($card->notes) > 0)
-                    <h4>Card Notes</h4>
+                    <h4>Ingredients</h4>
                     <ul>
                         @foreach ($card->notes as $note)
                             <li>
@@ -46,13 +46,24 @@
                     @endforeach
                 </div>
             @endif
+            <div class="mdl-cell mdl-cell--12-col">
+                <form class="" action="/cards/{{$card->id}}" method="POST">
+                    {{ method_field('PATCH')}}
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <textarea id="body" name="body" class="mdl-textfield__input" required>{{old('body')}}</textarea>
+                        <label class="mdl-textfield__label" for="body">Instructions</label>
+                    </div>
+                    <button class="mdl-button mdl-js-button mdl-button--raised block" type="submit">Update Instructions</button>
+                    {{ csrf_field() }}
+                </form>
+            </div>
             <div class="mdl-cell">
                 <form class="" action="/cards/{{$card->id}}/notes" method="POST">
                     <div class="mdl-textfield mdl-js-textfield">
                         <textarea id="body" name="body" class="mdl-textfield__input" required>{{old('body')}}</textarea>
-                        <label class="mdl-textfield__label" for="body">Add Note</label>
+                        <label class="mdl-textfield__label" for="body">Add Ingredient</label>
                     </div>
-                    <button class="mdl-button mdl-js-button mdl-button--raised block" type="submit">Add Note</button>
+                    <button class="mdl-button mdl-js-button mdl-button--raised block" type="submit">Add Ingredient</button>
                     {{ csrf_field() }}
                 </form>
             </div>
