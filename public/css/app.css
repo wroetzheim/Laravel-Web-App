@@ -5839,6 +5839,14 @@ main {
 .edit-form {
   font-size: 400%; }
 
+.card-image {
+  width: 100%;
+  height: 175px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-color: #009688; }
+
 /* Sticky footer styles
 -------------------------------------------------- */
 

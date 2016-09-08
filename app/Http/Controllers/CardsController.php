@@ -38,15 +38,15 @@ class CardsController extends Controller
 			return back();
 		}
         //title field is required and must be min 5 characters.
-        $rules = ['title' => 'required|min:5', 'description' =>'required'];
+        $rules = ['title' => 'required|min:5', 'description' =>'required', 'file' => 'required'];
         $this->validate($request, $rules);
 
 		//store the image
-		//$file = $request->file('file')->store('/public/recipe_image');
 		$file = $request->file('file');
 		$filename = time(). '-' . $file->getClientOriginalName();
-		$directory = '/images/recipes/';
-		$file->move(public_path().$directory, $filename);
+		$directory = 'images/recipe/';
+		$request->file('file')->storeAs($directory, $filename, 's3', 'public');
+		//$file->move(public_path().$directory, $filename);
 		$path = $directory.$filename;
 
         //save a new card based on the request parameters.

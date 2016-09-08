@@ -16,15 +16,16 @@
                         {{$card->title}}
                     </h3>
                 </div>
-                <div>
-                    Created by: {{$card->user->name}}
-                    <img src="{{($card->file)}}"/>
-                </div>
+                @if (Storage::disk('s3')->exists($card->file))
+                    <div class="card-image" style="background-image: url({{Storage::disk('s3')->url($card->file)}})">
+                        {{--<img src="{{Storage::disk('s3')->url($card->file)}}"/>--}}
+                    </div>
+                @endif
                 <div class="mdl-card__supporting-text">
                     <p>{{$card->description}}</p>
                 </div>
                 <div class="mdl-card__actions">
-                    <a href="http://en.wikipedia.org/wiki/Sky_Tower_%28Auckland%29">Wikipedia Entry</a>
+                    <p>Created by: {{$card->user->name}}</p>
                 </div>
                 <div class="mdl-card__actions mdl-card--border">
                   <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="/cards/{{$card->createSlug()}}">
