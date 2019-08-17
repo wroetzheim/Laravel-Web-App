@@ -108,6 +108,15 @@ main {
     background-color: rgb(0,150,136);
 }
 
+.fileupload {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 // html {
