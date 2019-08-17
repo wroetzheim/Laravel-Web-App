@@ -16,7 +16,6 @@
                         {{$card->title}}
                     </h3>
                 </div>
-                <div class="card-image" style="background-image: url({{url($card->file)}})">
                 <div class="mdl-card__supporting-text">
                     <p>{{$card->description}}</p>
                 </div>
