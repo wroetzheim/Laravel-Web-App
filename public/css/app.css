@@ -5847,6 +5847,15 @@ main {
   background-position: center;
   background-color: #009688; }
 
+.fileupload {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 
