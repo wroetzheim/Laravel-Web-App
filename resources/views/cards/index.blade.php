@@ -65,8 +65,7 @@
                         <label class="mdl-textfield__label" for="description">Recipe Description</label>
                     </div>
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label block">
-                        <input type="file" id="file" name="file" class="mdl-textfield__input fileupload" required>{{old('file')}}</input>
-                        <label for="file" class="mdl-button mdl-js-button mdl-button--raised block">Choose a file</label>
+                        <input type="file" id="file" name="file" class="mdl-textfield__input" required>{{old('file')}}</input>
                     </div>
                     <button class="mdl-button mdl-js-button mdl-button--raised block" type="submit">Add Recipe</button>
                     {{ csrf_field() }}
