@@ -16,11 +16,7 @@
                         {{$card->title}}
                     </h3>
                 </div>
-                @if (Storage::disk('s3')->exists($card->file))
-                    <div class="card-image" style="background-image: url({{Storage::disk('s3')->url($card->file)}})">
-                        {{--<img src="{{Storage::disk('s3')->url($card->file)}}"/>--}}
-                    </div>
-                @endif
+                <div class="card-image" style="background-image: url({{url($card->file)}})">
                 <div class="mdl-card__supporting-text">
                     <p>{{$card->description}}</p>
                 </div>
@@ -71,6 +67,7 @@
                     </div>
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label block">
                         <input type="file" id="file" name="file" class="mdl-textfield__input" required>{{old('file')}}</input>
+                        <label for="file">Choose a file</label>
                     </div>
                     <button class="mdl-button mdl-js-button mdl-button--raised block" type="submit">Add Recipe</button>
                     {{ csrf_field() }}
